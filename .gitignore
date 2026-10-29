@@ -1,0 +1,8 @@
+# OS és Editor fájlok
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Ideiglenes PR leírások
+docs/PR_DESCRIPTION.md
