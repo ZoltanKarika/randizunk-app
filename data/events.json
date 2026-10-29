@@ -22,39 +22,46 @@
   },
   "events": [
     {
-      "id": "coffee-cake",
-      "title": "Kávézó / Süti & Beszélgetés",
-      "icon": "☕",
-      "description": "Egy hangulatos hely, finom kávé vagy forró csoki, süti és kötetlen beszélgetés.",
-      "tag": "Klasszikus & Nyugodt"
+      "id": "nagyerdei-seta",
+      "title": "Nagyerdei séta",
+      "icon": "🌳",
+      "description": "Kellemes séta a Nagyerdőn a fák között, a Békás-tó és a stadion környékén, jó beszélgetéssel.",
+      "tag": "Természet & Romantikus"
     },
     {
-      "id": "walk-cocktail",
-      "title": "Esti séta + Koktél / Borozás",
-      "icon": "🍸",
-      "description": "Kellemes séta a városban, utána pedig beülünk egy jó koktélra vagy egy pohár borra.",
-      "tag": "Romantikus & Laza"
+      "id": "sor-bor",
+      "title": "Sör / Bor",
+      "icon": "🍷",
+      "description": "Beülünk egy hangulatos debreceni helyre egy jó pohár borra vagy kézműves sörre.",
+      "tag": "Laza & Beszélgetős"
     },
     {
-      "id": "board-game",
-      "title": "Társasjáték kávézó / Bár",
-      "icon": "🎲",
-      "description": "Kiderül, ki a jobb stratéga! Garantált nevetés és játékos versengés egy jó ital mellett.",
-      "tag": "Kreatív & Játékos"
+      "id": "mozi",
+      "title": "Mozi",
+      "icon": "🍿",
+      "description": "Megnézünk egy jó filmet (Cinema City / Apolló), utána pedig kibeszéljük a látottakat.",
+      "tag": "Kultúra & Kikapcsolódás"
     },
     {
-      "id": "movie-standup",
-      "title": "Mozi, Színház vagy Stand-up",
-      "icon": "🎭",
-      "description": "Közös élmény és kikapcsolódás, utána pedig kibeszéljük a látottakat.",
-      "tag": "Kultúra & Szórakozás"
-    },
-    {
-      "id": "dinner-food",
-      "title": "Vacsora (Olasz / Ázsiai / Street food)",
-      "icon": "🍝",
-      "description": "Kipróbálunk egy szuper éttermet vagy street food helyet, amit mindketten szeretünk.",
+      "id": "dg-italiano",
+      "title": "DG Italiano Pizzázás",
+      "icon": "🍕",
+      "description": "Egy igazi olasz pizzázás a DG Italiano-ban – garantáltan jó hangulat és szuper ízek.",
       "tag": "Gasztronómia"
+    },
+    {
+      "id": "anna-cukraszda-toci",
+      "title": "Kávé – Anna Cukrászda (Tóci) + séta",
+      "icon": "☕",
+      "description": "Finom kávé és süti az Anna Cukrászdában a Tóciban, utána pedig egy kellemes séta.",
+      "tag": "Édes & Nyugodt"
+    },
+    {
+      "id": "annuska-fagyi",
+      "title": "Fagyi – Annuska (Nagyerdő)",
+      "icon": "🍦",
+      "description": "Egy jó fagyizás a nagyerdei Annuskában, mert fagyizni bármilyen időben ér! #notoocoldforicecream",
+      "tag": "#notoocoldforicecream"
     }
   ]
 }
