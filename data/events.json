@@ -12,10 +12,12 @@
       "Permission Denied: Nincs jogosultságod nemet mondani! 😄"
     ],
     "timeOptions": [
-      "Hétköznap munka után",
-      "Péntek este",
-      "Szombat délután / este",
-      "Vasárnap"
+      "Péntek 18:00",
+      "Péntek 19:30",
+      "Szombat 16:00",
+      "Szombat 18:30",
+      "Vasárnap 15:30",
+      "Vasárnap 17:00"
     ]
   },
   "events": [

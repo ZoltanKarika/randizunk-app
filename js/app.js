@@ -7,6 +7,7 @@ const appState = {
   config: null,
   selectedEvents: [],
   selectedTimes: [],
+  customDateTime: '',
   customNote: '',
   noButtonAttempts: 0,
   webhookSent: false
@@ -24,10 +25,12 @@ const FALLBACK_CONFIG = {
       "AssertionError: expected 'Igen' but received 'Nem' attempt."
     ],
     timeOptions: [
-      "Hétköznap munka után",
-      "Péntek este",
-      "Szombat délután / este",
-      "Vasárnap"
+      "Péntek 18:00",
+      "Péntek 19:30",
+      "Szombat 16:00",
+      "Szombat 18:30",
+      "Vasárnap 15:30",
+      "Vasárnap 17:00"
     ]
   },
   events: [
@@ -287,17 +290,39 @@ function toggleTimeSelection(timeLabel, chipElement) {
 /**
  * Screen 3: Build Formatted QA Report, Copy to Clipboard & Trigger Webhook
  */
+function formatCustomDateTime(dateTimeStr) {
+  if (!dateTimeStr) return '';
+  try {
+    const d = new Date(dateTimeStr);
+    if (isNaN(d.getTime())) return dateTimeStr;
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const hours = String(d.getHours()).padStart(2, '0');
+    const minutes = String(d.getMinutes()).padStart(2, '0');
+    const daysHu = ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'];
+    const dayName = daysHu[d.getDay()];
+    return `${year}.${month}.${day}. (${dayName}) ${hours}:${minutes}`;
+  } catch {
+    return dateTimeStr;
+  }
+}
+
 function buildQAReportText() {
   const events = appState.config?.events || FALLBACK_CONFIG.events;
   const chosenEvents = events
     .filter((e) => appState.selectedEvents.includes(e.id))
     .map((e) => `${e.icon} ${e.title}`);
 
-  const chosenTimes =
-    appState.selectedTimes.length > 0
-      ? appState.selectedTimes.join(', ')
-      : 'Rugalmas / megbeszéljük';
+  const timeParts = [];
+  if (appState.customDateTime) {
+    timeParts.push(formatCustomDateTime(appState.customDateTime));
+  }
+  if (appState.selectedTimes.length > 0) {
+    timeParts.push(...appState.selectedTimes);
+  }
 
+  const chosenTimes = timeParts.length > 0 ? timeParts.join(' VAGY ') : 'Rugalmas / megbeszéljük';
   const note = appState.customNote.trim() || 'Nincs extra megjegyzés';
 
   return [
@@ -307,7 +332,7 @@ function buildQAReportText() {
     `🛡️ "Nem" gomb kísérletek: ${appState.noButtonAttempts} db`,
     `🎯 Választott program(ok):`,
     ...chosenEvents.map((item) => `   • ${item}`),
-    `🕒 Időpont preferencia: ${chosenTimes}`,
+    `🕒 Időpont preferencia (nap/óra): ${chosenTimes}`,
     `💬 Megjegyzés / Feature Request: ${note}`,
     '==================================='
   ].join('\n');
@@ -369,6 +394,7 @@ function initAppEvents() {
   const btnCopyReport = document.getElementById('btn-copy-report');
   const btnBackEdit = document.getElementById('btn-back-edit');
   const customNoteInput = document.getElementById('custom-note');
+  const customDateTimeInput = document.getElementById('custom-datetime');
 
   if (btnYes) {
     btnYes.addEventListener('click', () => {
@@ -392,6 +418,10 @@ function initAppEvents() {
           validationMsg.hidden = false;
         }
         return;
+      }
+
+      if (customDateTimeInput) {
+        appState.customDateTime = customDateTimeInput.value;
       }
 
       if (customNoteInput) {
