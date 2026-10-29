@@ -64,16 +64,86 @@
     <!-- Screen 2: Event Configurator -->
     <section id="screen-2" class="screen" aria-labelledby="screen-2-title" hidden>
       <div class="card-content">
-        <h2 id="screen-2-title">Randi Konfigurátor</h2>
-        <p class="subtitle">Válassz a rendelkezésre álló programok közül!</p>
+        <p class="qa-pretitle mono-text">TEST CASE #02: ENVIRONMENT_SETUP</p>
+        <h2 id="screen-2-title">Randi Konfigurátor 🎉</h2>
+        <p class="subtitle">
+          Sikeres első tesztlépés! Most állítsuk össze a paramétereket (többet is választhatsz):
+        </p>
+
+        <!-- 1. Events List from JSON -->
+        <div class="form-group">
+          <label class="form-label">1. Milyen programhoz lenne kedved?</label>
+          <div id="events-grid" class="events-grid" role="group" aria-label="Randi programok">
+            <!-- Dynamically populated from data/events.json -->
+          </div>
+          <p id="event-validation-msg" class="validation-msg mono-text" hidden>
+            ⚠️ AssertionFailed: Legalább 1 programot válassz ki a folytatáshoz!
+          </p>
+        </div>
+
+        <!-- 2. Time / Day Chips -->
+        <div class="form-group">
+          <label class="form-label">2. Mikor érsz rá leginkább?</label>
+          <div id="time-chips" class="time-chips" role="group" aria-label="Időpont opciók">
+            <!-- Dynamically populated from data/events.json -->
+          </div>
+        </div>
+
+        <!-- 3. Custom Note / Feature Request -->
+        <div class="form-group">
+          <label for="custom-note" class="form-label">
+            3. Feature Request / Kedvenc ital / Extra megjegyzés <span class="optional-tag">(opcionális)</span>
+          </label>
+          <textarea
+            id="custom-note"
+            class="form-textarea"
+            rows="2"
+            placeholder="Pl.: Imádom a pisztáciás sütit, vagy jöhet egy jó kis koktél..."></textarea>
+        </div>
+
+        <div class="screen-actions">
+          <button type="button" id="btn-to-summary" class="btn btn-primary btn-full">
+            <span>Teszteredmény generálása ✅</span>
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- Screen 3: Test Report & Summary -->
     <section id="screen-3" class="screen" aria-labelledby="screen-3-title" hidden>
       <div class="card-content">
+        <div class="passed-banner mono-text">
+          <span>STATUS: PASSED ✅</span>
+        </div>
         <h2 id="screen-3-title">QA Teszt Jegyzőkönyv</h2>
-        <p class="subtitle">A teszteset sikeresen lefutott!</p>
+        <p class="subtitle">
+          Minden teszteset zöldre futott! Íme az összeállított randi-konfiguráció:
+        </p>
+
+        <!-- Formatted QA Report Card -->
+        <div class="report-card">
+          <pre id="report-preview" class="report-preview mono-text"></pre>
+        </div>
+
+        <!-- Clear Copy Instructions & Action -->
+        <div class="copy-instructions">
+          <p class="instruction-title">📬 Utolsó lépés (Deploy to Chat):</p>
+          <p class="instruction-text">
+            Kattints az alábbi <strong>Válasz másolása</strong> gombra, majd <strong>illeszd be és küldd el nekem chatbe</strong>, hogy lássam az eredményt! 💬
+          </p>
+        </div>
+
+        <div class="screen-actions">
+          <button type="button" id="btn-copy-report" class="btn btn-primary btn-full">
+            <span id="copy-btn-label">📋 Válasz másolása a vágólapra</span>
+          </button>
+          <p id="copy-feedback" class="copy-feedback mono-text" hidden>
+            ✅ Kimásolva a vágólapra! Most már csak be kell illesztened chatbe!
+          </p>
+          <button type="button" id="btn-back-edit" class="btn btn-ghost">
+            <span>← Paraméterek módosítása</span>
+          </button>
+        </div>
       </div>
     </section>
   </main>
