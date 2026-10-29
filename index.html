@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randizunk App | QA Test Suite v1.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-decoration" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <main class="app-container">
+    <!-- Top QA Status Bar -->
+    <header class="qa-header">
+      <div class="qa-badge">
+        <span class="status-dot" id="qa-status-dot"></span>
+        <span class="mono-text" id="qa-suite-label">Test Suite: First_Date_v1.0</span>
+      </div>
+      <div class="step-indicator mono-text" id="step-indicator">
+        Step 1 / 3
+      </div>
+    </header>
+
+    <!-- Screen 1: The Question -->
+    <section id="screen-1" class="screen active" aria-labelledby="screen-1-title">
+      <div class="card-content">
+        <h1 id="screen-1-title">Eljössz velem randizni?</h1>
+        <p class="subtitle">Készítettem neked egy kis alkalmazást. Kérlek futtasd le az első tesztesetet!</p>
+      </div>
+    </section>
+
+    <!-- Screen 2: Event Configurator -->
+    <section id="screen-2" class="screen" aria-labelledby="screen-2-title" hidden>
+      <div class="card-content">
+        <h2 id="screen-2-title">Randi Konfigurátor</h2>
+        <p class="subtitle">Válassz a rendelkezésre álló programok közül!</p>
+      </div>
+    </section>
+
+    <!-- Screen 3: Test Report & Summary -->
+    <section id="screen-3" class="screen" aria-labelledby="screen-3-title" hidden>
+      <div class="card-content">
+        <h2 id="screen-3-title">QA Teszt Jegyzőkönyv</h2>
+        <p class="subtitle">A teszteset sikeresen lefutott!</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
