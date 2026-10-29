@@ -30,8 +30,34 @@
     <!-- Screen 1: The Question -->
     <section id="screen-1" class="screen active" aria-labelledby="screen-1-title">
       <div class="card-content">
+        <div class="hero-illustration" aria-hidden="true">
+          <div class="floating-heart heart-1">💖</div>
+          <div class="floating-heart heart-2">✨</div>
+          <div class="hero-avatar">🧪💌</div>
+        </div>
+
+        <p class="qa-pretitle mono-text">TEST CASE #01: INITIAL_INVITATION</p>
         <h1 id="screen-1-title">Eljössz velem randizni?</h1>
-        <p class="subtitle">Készítettem neked egy kis alkalmazást. Kérlek futtasd le az első tesztesetet!</p>
+        <p class="subtitle">
+          Szia! Készítettem neked egy kis tesztelendő alkalmazást.<br />
+          Kérlek válaszd ki a megfelelő kimenetet a teszteset lezárásához!
+        </p>
+
+        <!-- QA Edge Case Console Log Box -->
+        <div id="qa-log-box" class="qa-log-box mono-text" role="status" aria-live="polite" hidden>
+          <span class="log-prefix">[QA-LOG]</span>
+          <span id="qa-log-message">Várakozás felhasználói interakcióra...</span>
+        </div>
+
+        <!-- Action Buttons Arena -->
+        <div id="button-arena" class="button-arena">
+          <button type="button" id="btn-yes" class="btn btn-primary btn-yes">
+            <span>Igen, szívesen! ✨</span>
+          </button>
+          <button type="button" id="btn-no" class="btn btn-secondary btn-no">
+            <span>Nem</span>
+          </button>
+        </div>
       </div>
     </section>
 
