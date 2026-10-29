@@ -327,6 +327,14 @@ h1, h2 {
   margin-bottom: 0.65rem;
 }
 
+.sublabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
 .optional-tag {
   font-weight: 400;
   color: var(--text-muted);
@@ -410,6 +418,33 @@ h1, h2 {
   font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.4;
+}
+
+/* Concrete DateTime Picker & Quick Times */
+.datetime-picker-wrapper {
+  margin-bottom: 0.85rem;
+}
+
+.form-datetime {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  color: var(--text-main);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-datetime:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12);
+}
+
+.quick-times-wrapper {
+  margin-top: 0.4rem;
 }
 
 /* Time Preference Chips */

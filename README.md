@@ -1,4 +1,4 @@
-# 🧪 Randizunk App (QA Edition)
+# 🧪 Test Automation Suite v1.0 (QA Edition)
 
 Egy interaktív, szoftvertesztelői (QA) humorral fűszerezett randira hívó webalkalmazás.
 

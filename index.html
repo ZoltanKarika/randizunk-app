@@ -81,11 +81,18 @@
           </p>
         </div>
 
-        <!-- 2. Time / Day Chips -->
+        <!-- 2. Time / Day Chips & Concrete DateTime Picker -->
         <div class="form-group">
-          <label class="form-label">2. Mikor érsz rá leginkább?</label>
-          <div id="time-chips" class="time-chips" role="group" aria-label="Időpont opciók">
-            <!-- Dynamically populated from data/events.json -->
+          <label class="form-label">2. Mikor érsz rá? (Konkrét nap és óra)</label>
+          <div class="datetime-picker-wrapper">
+            <label for="custom-datetime" class="sublabel">🗓️ Válassz pontos dátumot és órát:</label>
+            <input type="datetime-local" id="custom-datetime" class="form-datetime" />
+          </div>
+          <div class="quick-times-wrapper">
+            <span class="sublabel">⚡ Vagy válassz a gyors opciók közül:</span>
+            <div id="time-chips" class="time-chips" role="group" aria-label="Gyors időpont opciók">
+              <!-- Dynamically populated from data/events.json -->
+            </div>
           </div>
         </div>
 
