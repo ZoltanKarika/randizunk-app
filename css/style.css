@@ -165,6 +165,157 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
+/* Screen 1: Hero Illustration & QA Elements */
+.hero-illustration {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0.25rem auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-light);
+  border-radius: 50%;
+  box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.2);
+}
+
+.hero-avatar {
+  font-size: 2.5rem;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: floatAround 3s infinite ease-in-out;
+}
+
+.heart-1 {
+  top: -6px;
+  right: -4px;
+}
+
+.heart-2 {
+  bottom: 0;
+  left: -6px;
+  animation-delay: 1.5s;
+}
+
+@keyframes floatAround {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.1);
+  }
+}
+
+.qa-pretitle {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+/* QA Log Toast Box */
+.qa-log-box {
+  background: #0f172a;
+  color: #f8fafc;
+  border-left: 4px solid var(--qa-amber);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.25);
+  animation: fadeIn 0.25s ease;
+}
+
+.log-prefix {
+  color: var(--qa-amber);
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+
+/* Buttons & Evasive Arena */
+.button-arena {
+  position: relative;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.65rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 10px 20px -6px rgba(225, 29, 72, 0.45);
+  z-index: 2;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 24px -6px rgba(225, 29, 72, 0.55);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: var(--secondary);
+  border: 1px solid #cbd5e1;
+  z-index: 3;
+}
+
+.btn-no.is-evading {
+  position: fixed;
+  transition: left 0.18s cubic-bezier(0.25, 1, 0.5, 1), top 0.18s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+}
+
+/* Confetti Particle */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 2px;
+  animation: confettiFall forwards ease-out;
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--rot));
+  }
+}
+
 @media (max-width: 480px) {
   .app-container {
     padding: 1.25rem;
